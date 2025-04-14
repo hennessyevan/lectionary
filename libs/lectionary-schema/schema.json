@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Lectionary Source Schema",
+  "description": "All sources should adhere to this schema.",
+
+  "type": "object",
+  "required": ["id", "data"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier for this source."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the source."
+    },
+    "display_name": {
+      "type": "string",
+      "description": "The name of the source that can be displayed in UIs."
+    },
+    "url": {
+      "type": "string",
+      "description": "The URL of the source."
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time this source was last updated."
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "romcal_id": {
+            "type": "string",
+            "description": "The unique identifier for this entry in the Romcal database."
+          },
+          "year": {
+            "type": "string",
+            "description": "The liturgical year.",
+            "enum": ["A", "B", "C", "I", "II"]
+          },
+          "season": {
+            "type": "string",
+            "description": "The liturgical season.",
+            "enum": [
+              "ADVENT",
+              "CHRISTMAS_TIME",
+              "ORDINARY_TIME",
+              "LENT",
+              "EASTER"
+            ]
+          },
+          "week": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 34
+          },
+          "day": {
+            "type": "number",
+            "description": "ISO 8601 day of the week.",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "first_reading": {
+            "$ref": "#/$defs/biblical_reference"
+          },
+          "responsorial_psalm": {
+            "$ref": "#/$defs/biblical_reference"
+          },
+          "second_reading": {
+            "$ref": "#/$defs/biblical_reference"
+          },
+          "gospel": {
+            "$ref": "#/$defs/biblical_reference"
+          }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "biblical_reference": {
+      "type": "object",
+      "properties": {
+        "original_reference": {
+          "type": "string",
+          "description": "The original reference. e.g. 'John 3:16-18'"
+        },
+        "reference": {
+          "description": "The reference in object format",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "book": { "type": "string" },
+              "chapter": { "type": "number" },
+              "verses": {
+                "type": "array",
+                "items": { "type": "number", "minimum": 1, "maximum": 176 }
+              },
+              "parts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "verse": { "type": "number", "minimum": 1, "maximum": 176 },
+                    "part": {
+                      "type": "string",
+                      "enum": ["a", "b", "c", "d", "e"]
+                    },
+                    "regex": { "type": "string", "format": "regex" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

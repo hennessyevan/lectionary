@@ -1,0 +1,8 @@
+{
+  "name": "@hennessyevan/constants",
+  "version": "0.0.0",
+  "description": "Constants used across the whole project.",
+  "module": "./src/index.ts",
+  "author": "hennessyevan",
+  "license": "MIT"
+}

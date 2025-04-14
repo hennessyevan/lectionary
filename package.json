@@ -1,0 +1,29 @@
+{
+  "name": "@hennessyevan/lectionary-root",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.5.2",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "turbo": "^2.4.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "workspaces": [
+    "libs/*"
+  ],
+  "dependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/luxon": "^3.4.2",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "bible-passage-reference-parser": "^3.0.0",
+    "compromise": "^14.14.4",
+    "lodash-es": "^4.17.21",
+    "luxon": "^3.5.0",
+    "tsx": "^4.19.3",
+    "vitest": "^3.0.8"
+  }
+}

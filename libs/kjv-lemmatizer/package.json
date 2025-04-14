@@ -1,0 +1,15 @@
+{
+  "name": "@hennessyevan/kjv-lemmatizer",
+  "version": "0.0.0",
+  "description": "Lemmatizes the KJV Public Domain Bible.",
+  "module": "./src/index.ts",
+  "scripts": {
+    "test": "vitest",
+    "build": "tsx ./src/index.ts"
+  },
+  "devDependencies": {
+    "@hennessyevan/constants": "workspace:*"
+  },
+  "author": "hennessyevan",
+  "license": "MIT"
+}
