@@ -40,4 +40,5 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 assets/*
 !assets/kjv_lemmatized.json
 !assets/kjv_source.json
+!assets/canada-lectionary-raw.json
 lwc.ts

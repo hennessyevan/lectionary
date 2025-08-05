@@ -5,8 +5,8 @@
   "private": true,
   "packageManager": "pnpm@10.5.2",
   "devDependencies": {
-    "@types/bun": "latest",
-    "turbo": "^2.4.4"
+    "@types/bun": "^1.2.19",
+    "turbo": "^2.5.5"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -15,15 +15,18 @@
     "libs/*"
   ],
   "dependencies": {
+    "@romcal/calendar.canada": "3.0.0-dev.110",
     "@types/lodash-es": "^4.17.12",
-    "@types/luxon": "^3.4.2",
+    "@types/luxon": "^3.7.1",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
-    "bible-passage-reference-parser": "^3.0.0",
+    "bible-passage-reference-parser": "^3.1.0",
     "compromise": "^14.14.4",
     "lodash-es": "^4.17.21",
-    "luxon": "^3.5.0",
-    "tsx": "^4.19.3",
-    "vitest": "^3.0.8"
+    "luxon": "^3.7.1",
+    "ollama": "^0.5.16",
+    "romcal": "3.0.0-dev.110",
+    "tsx": "^4.20.3",
+    "vitest": "^3.2.4"
   }
 }
